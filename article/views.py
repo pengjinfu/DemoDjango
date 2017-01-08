@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 import json
 from article.models import Article
+from datetime import datetime
 
 
 # Create your views here.
@@ -26,4 +27,8 @@ def detail(request, my_args):
     #     % (post.title, post.category, post.date_time, post.content))
     # return HttpResponse(str)
     #str =  json.dump(pars);
-    return HttpResponse("Use article test method result 2 : " + my_args + test );
+    return HttpResponse("Use article test method result : " + my_args + test );
+
+# 对使用模板进行测试操作
+def test(request) :
+    return render(request, 'test.html', {'current_time': datetime.now()})

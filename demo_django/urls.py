@@ -19,15 +19,17 @@ from article import  views
 
 
 urlpatterns = [
-    #url(r'^admin/', admin.site.urls),
     url(r'^admin/', admin.site.urls),
     # 查看view的home方法操作
     url(r'^$', views.home),  # 由于目前只有一个app, 方便起见, 就不设置include了
     # 对ajax的数据的处理
     url(r'^ajax_dict/$', views.ajax_dict, name='ajax_dict'),
 
-    #复杂的url的处理
+    # 复杂的url的处理
     url(r'^(?P<my_args>\d+)/$', views.detail, name='detail'),
+
+    # 增加模板url
+    url(r'^test/$', views.test, name='test'),
 ]
 
 # urlpatterns = patterns('',

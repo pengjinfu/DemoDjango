@@ -28,7 +28,8 @@ Demo_django是对python django 框架的实践。 django 是非常轻便的框�
 #####1.  部署和执行django的项目
 ###### 1) 基本的MVC的操作 
 - 【done】启动django的应用服务（切换到项目的目录）：python manage.py runserver [查看](https://andrew-liu.gitbooks.io/django-blog/content/xiang_mu_yu_app.html)
-- django 的ajax的处理
+- 【done】django 的ajax的处理
+- 【done】在开发环境关闭缓存，在settings.py进行设置 ，[查看](http://www.dongcoder.com/detail-211402.html)
 - 页面的http的请求： Controller->model->Controller->View
 - 完成基本的数据的接口的交互
 
