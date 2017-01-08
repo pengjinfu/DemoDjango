@@ -74,8 +74,8 @@ DATABASES = {
 }
 ```
 - 【done】使用sqlite的操作：同上
-- 使用mysql的操作：需要安装mysql的扩展： pip install MySQL-python   配置同上
-- 使用redis的操作： [查看](http://www.cnblogs.com/fuhuixiang/p/4174896.html)
+- 【done】使用mysql的操作：需要安装mysql的扩展：pip install PyMySQL  配置同上 (这MySQL-python 扩展在python 3.5之后再mysql官方找不到驱动)，[查看](https://github.com/PyMySQL/PyMySQL/)
+- 【done】使用redis的操作：pip install redis [查看](https://github.com/sebleier/django-redis-cache)
 ```
 CACHES = {
     'default': {
@@ -94,6 +94,7 @@ NEVER_REDIS_TIMEOUT=365*24*60*60
 
 #####2. 能够了解django中自动加载库和管理第三方库
 - 【done】python的第三方库的自动加载 ,[单个加载](http://www.jianshu.com/p/41a9c25273b1),[批量加载](http://lazybios.com/2015/06/how-to-use-requirementstxt-file-in-python/)
+- 一些常用的第三方库/组件库 ， [查看](http://dudu.zhihu.com/story/8083778)
 - 自建构建第三方库进行加载[这个暂时不需要]
 
 
