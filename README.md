@@ -27,11 +27,28 @@ Demo_django是对python django 框架的实践。 django 是非常轻便的框�
 ####五、 项目的目标
 #####1.  部署和执行django的项目
 ###### 1) 基本的MVC的操作 
+- 启动django的应用服务：
+- 页面的http的请求： Controller->model->Controller->View
+- 完成基本的数据的接口的交互
 ###### 2） 包括命令行的使用（对内）
+- 生成app/模块的命令
+- 进行model操作的命令
 ###### 3） 组件的使用，如mysql,sqlite, redis, mongo 等
+- 使用sqlite的操作：
+- 使用mysql的操作：
+- 使用redis的操作：
+- 使用mongo的操作：
 #####2. 能够了解django中自动加载库和管理第三方库
+- python的第三方库的自动加载
+- 自建构建第三方库进行加载
 #####3. 集成SDK的处理，包括http的各种操作
 #####4. 支持对django的单元测试/集成测试的工作
+- 常用的单元测试框架：
+- 使用测试框架编写测试的demo,支持对django的service/model的测试
+- 集成框架的支持：
 #####5. 对django 的自动处理
+- 对django的框架的优化，使其支持service层级
+- 熟悉django的模板机制
+- 工具的集成处理
 
 ####六、 其他
