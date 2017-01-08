@@ -11,5 +11,9 @@ class Article(models.Model) :
     def __str__(self) :
         return self.title
 
+    def test(test):
+        return 'testing' + test;
+
     class Meta:  #按时间下降排序
         ordering = ['-date_time']
+

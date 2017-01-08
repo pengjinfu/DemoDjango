@@ -27,7 +27,8 @@ Demo_django是对python django 框架的实践。 django 是非常轻便的框�
 ####五、 项目的目标
 #####1.  部署和执行django的项目
 ###### 1) 基本的MVC的操作 
-- 启动django的应用服务：
+- 【done】启动django的应用服务（切换到项目的目录）：python manage.py runserver [查看](https://andrew-liu.gitbooks.io/django-blog/content/xiang_mu_yu_app.html)
+- django 的ajax的处理
 - 页面的http的请求： Controller->model->Controller->View
 - 完成基本的数据的接口的交互
 
@@ -52,6 +53,7 @@ Demo_django是对python django 框架的实践。 django 是非常轻便的框�
 - 集成框架的支持：
 
 #####5. 对django 的自动处理
+- 研究django的框架的源代码：python\Lib\site-packages\django
 - 对django的框架的优化，使其支持service层级
 - 熟悉django的模板机制
 - 工具的集成处理
