@@ -30,24 +30,76 @@ Demo_django是对python django 框架的实践。 django 是非常轻便的框�
 - 【done】启动django的应用服务（切换到项目的目录）：python manage.py runserver [查看](https://andrew-liu.gitbooks.io/django-blog/content/xiang_mu_yu_app.html)
 - 【done】django 的ajax的处理
 - 【done】在开发环境关闭缓存，在settings.py进行设置 ，[查看](http://www.dongcoder.com/detail-211402.html)
-- 页面的http的请求： Controller->model->Controller->View
-- 完成基本的数据的接口的交互
+- 【done】对框架的模板操作，[查看](https://docs.djangoproject.com/en/1.10/topics/templates/)
+- 【done】页面的http的请求： Controller->model->Controller->View [Django 采用 urls配置的方式]
+- 【done】完成基本的数据的接口的交互[支持url的接口请求并相应的处理]
+-  Python 的多线程的处理
 
 ###### 2） 包括命令行的使用（对内）
-- 生成app/模块的命令
-- 进行model操作的命令
+- 【done】生成app/模块的命令：django-admin.py startproject YOUR_APP_NAME [查看](https://andrew-liu.gitbooks.io/django-blog/content/xiang_mu_yu_app.html)
+- 【done】进行model操作的命令： python manage.py shell  [查看](https://andrew-liu.gitbooks.io/django-blog/content/models.html)
 
 ###### 3） 组件的使用，如mysql,sqlite, redis, mongo 等
-- 使用sqlite的操作：
-- 使用mysql的操作：
-- 使用redis的操作：
-- 使用mongo的操作：
+- 【done】支持多个库的操作和使用 ，[查看](https://segmentfault.com/a/1190000003555520)
+```
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    },
+    'auth_db': {
+        'NAME': 'auth_db',
+        'ENGINE': 'django.db.backends.mysql',
+        'USER': 'mysql_user',
+        'PASSWORD': 'swordfish',
+    },
+    'primary': {
+        'NAME': 'primary',
+        'ENGINE': 'django.db.backends.mysql',
+        'USER': 'mysql_user',
+        'PASSWORD': 'spam',
+    },
+    'replica1': {
+        'NAME': 'replica1',
+        'ENGINE': 'django.db.backends.mysql',
+        'USER': 'mysql_user',
+        'PASSWORD': 'eggs',
+    },
+    'replica2': {
+        'NAME': 'replica2',
+        'ENGINE': 'django.db.backends.mysql',
+        'USER': 'mysql_user',
+        'PASSWORD': 'bacon',
+    },
+}
+```
+- 【done】使用sqlite的操作：同上
+- 使用mysql的操作：需要安装mysql的扩展： pip install MySQL-python   配置同上
+- 使用redis的操作： [查看](http://www.cnblogs.com/fuhuixiang/p/4174896.html)
+```
+CACHES = {
+    'default': {
+        'BACKEND': 'redis_cache.cache.RedisCache',
+        'LOCATION': '127.0.0.1:6379',
+        "OPTIONS": {
+            "CLIENT_CLASS": "redis_cache.client.DefaultClient",
+        },
+    },
+}
+REDIS_TIMEOUT=7*24*60*60
+CUBES_REDIS_TIMEOUT=60*60
+NEVER_REDIS_TIMEOUT=365*24*60*60
+```
+- 使用mongo的操作：pip install mongoengine==0.8.0  [查看](http://staltz.com/djangoconfi-mongoengine/#/8)
 
 #####2. 能够了解django中自动加载库和管理第三方库
-- python的第三方库的自动加载
-- 自建构建第三方库进行加载
+- 【done】python的第三方库的自动加载 ,[单个加载](http://www.jianshu.com/p/41a9c25273b1),[批量加载](http://lazybios.com/2015/06/how-to-use-requirementstxt-file-in-python/)
+- 自建构建第三方库进行加载[这个暂时不需要]
+
 
 #####3. 集成SDK的处理，包括http的各种操作
+
+
 #####4. 支持对django的单元测试/集成测试的工作
 - 常用的单元测试框架：
 - 使用测试框架编写测试的demo,支持对django的service/model的测试

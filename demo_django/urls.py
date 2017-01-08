@@ -30,6 +30,9 @@ urlpatterns = [
 
     # 增加模板url
     url(r'^test/$', views.test, name='test'),
+
+    # Redis 操作
+    url(r'^redis/$', views.redis, name='redis'),
 ]
 
 # urlpatterns = patterns('',
