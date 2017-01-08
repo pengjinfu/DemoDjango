@@ -1,0 +1,47 @@
+#!/usr/bin/python3.4 
+# Comment:Show diffrent  method to http request 
+# Author:
+# Date:2016.08.15 
+import urllib
+import urllib.parse
+import urllib.request
+import http.client
+
+
+def PrintRequest(request):
+    ''' To print request base info '''
+    print(request.status, request.reason)
+    print('Headers:', request.getheaders())
+
+
+def HttpRequest_v1(url, header, method):
+    ''' use urllib.request.urlopen() to http request! '''
+    req = urllib.request.Request(url, None, header, None, False, method)
+    content = urllib.request.urlopen(req)
+    PrintRequest(content)
+
+
+def HttpRequest_v2(host, header, method):
+    ''' use http.client.HTTPConnection.request() to http request!  '''
+    conn = http.client.HTTPConnection(host)
+    conn.request(method, "", "", header)
+    content = conn.getresponse()
+    PrintRequest(content)
+    conn.close()
+
+
+if __name__ == '__main__':
+    hostName = 'csdn.net'
+    loginUrl = 'http://{0}/'.format(hostName)
+    headers_tmp = {
+        "User-Agent": 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.97 Safari/537.36'}
+    method = 'GET'
+    print('......................................................................')
+    print('start use urllib.request.urlopen() to http request... ')
+    HttpRequest_v1(loginUrl, headers_tmp, method)
+    print('......................................................................')
+    print('start use http.client.HTTPConnection.request() to http request... ')
+    HttpRequest_v2(hostName, headers_tmp, method)
+
+
+
