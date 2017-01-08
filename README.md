@@ -34,6 +34,7 @@ Demo_django是对python django 框架的实践。 django 是非常轻便的框�
 ###### 2） 包括命令行的使用（对内）
 - 生成app/模块的命令
 - 进行model操作的命令
+
 ###### 3） 组件的使用，如mysql,sqlite, redis, mongo 等
 - 使用sqlite的操作：
 - 使用mysql的操作：
