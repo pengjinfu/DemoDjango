@@ -1,0 +1,3 @@
+# 忽略缓存文件
+/__pycache__/*
+/demo_django/__pycache__/*
