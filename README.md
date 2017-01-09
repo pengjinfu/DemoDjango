@@ -33,7 +33,7 @@ Demo_django是对python django 框架的实践。 django 是非常轻便的框�
 - 【done】对框架的模板操作，[查看](https://docs.djangoproject.com/en/1.10/topics/templates/)
 - 【done】页面的http的请求： Controller->model->Controller->View [Django 采用 urls配置的方式]
 - 【done】完成基本的数据的接口的交互[支持url的接口请求并相应的处理]
--  Python 的多线程的处理
+- 【done】Python 的多线程的处理，使用自带的线程库处理 [查看](http://www.runoob.com/python/python-multithreading.html)
 
 ###### 2） 包括命令行的使用（对内）
 - 【done】生成app/模块的命令：django-admin.py startproject YOUR_APP_NAME [查看](https://andrew-liu.gitbooks.io/django-blog/content/xiang_mu_yu_app.html)
@@ -102,7 +102,10 @@ NEVER_REDIS_TIMEOUT=365*24*60*60
 
 
 #####4. 支持对django的单元测试/集成测试的工作
-- 常用的单元测试框架：
+- 【done】常用的单元测试框架：[unittest](https://docs.python.org/3/library/unittest.html),[pyunit](http://pyunit.sourceforge.net/pyunit_cn.html) , [behave](http://pythonhosted.org/behave/)
+- unittest框架使用demo 见 tests 目录 ， 运行：python -m unittest tests/test_something.py  或者 python -m unittest -v tests/test_something.py
+- behave框架使用
+- PyUnit的框架
 - 使用测试框架编写测试的demo,支持对django的service/model的测试
 - 集成框架的支持：
 
