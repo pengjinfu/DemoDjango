@@ -19,4 +19,8 @@ __pycache__
 TESTS-*
 
 # 过滤掉IDE的配置文件
-.ide
+demo_django.iml
+misc.xml
+modules.xml
+workspace.xml
+profiles_settings.xml
