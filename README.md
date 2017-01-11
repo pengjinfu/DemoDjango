@@ -103,8 +103,8 @@ NEVER_REDIS_TIMEOUT=365*24*60*60
 
 #####4. 支持对django的单元测试/集成测试的工作
 - 【done】常用的单元测试框架：[unittest](https://docs.python.org/3/library/unittest.html),[pyunit](http://pyunit.sourceforge.net/pyunit_cn.html) , [behave](http://pythonhosted.org/behave/)
-- unittest框架使用demo 见 tests 目录 ， 运行：python -m unittest tests/test_something.py  或者 python -m unittest -v tests/test_something.py
-- behave框架使用
+- 【done】unittest框架使用demo 见 tests 目录 ， 运行：python -m unittest tests/test_something.py  或者 python -m unittest -v tests/test_something.py
+- behave框架使用： pip install -U behave 
 - PyUnit的框架
 - 使用测试框架编写测试的demo,支持对django的service/model的测试
 - 集成框架的支持：
@@ -116,3 +116,23 @@ NEVER_REDIS_TIMEOUT=365*24*60*60
 - 工具的集成处理
 
 ####六、 其他
+
+####七、 常见问题
+###### 1. behave given 不支持中文，会报"UnicodeDecodeError: 'gbk' codec can't decode byte 0x80 in position 265: illegal multibyte sequence"
+> 解决方法：对behave\runner.py源码进行修改，[查看](https://github.com/behave/behave/issues/361)
+```
+## 改前：
+def exec_file(filename, globals={}, locals=None):
+    if locals is None:
+        locals = globals
+    locals['__file__'] = filename
+    with open(filename) as f:
+
+## 改后：
+def exec_file(filename, globals={}, locals=None):
+    if locals is None:
+        locals = globals
+    locals['__file__'] = filename
+    with open(filename, "rb") as f:
+
+```
