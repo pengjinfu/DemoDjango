@@ -5,6 +5,7 @@ from article.models import Article
 from datetime import datetime
 from django.conf import settings
 from django.core.cache import cache
+from article.services import ArticleServices
 
 # Create your views here.
 def home(request):
@@ -20,15 +21,10 @@ def ajax_dict(request):
     return HttpResponse(json.dumps(name_dict), content_type='application/json')
 
 # 在view层就直接使用model的方法
-def detail(request, my_args):
-    #post = Article.objects.all()[int(my_args)]
-    #pars =  request.params;
-    test = Article.test('aaaabb')
-    # str = ("title = %s, category = %s, date_time = %s, content = %s"
-    #     % (post.title, post.category, post.date_time, post.content))
-    # return HttpResponse(str)
-    #str =  json.dump(pars);
-    return HttpResponse("Use article test method result : " + my_args + test );
+def detail(request,my_args):
+    services =  ArticleServices();
+    test = services.detail()
+    return HttpResponse("Use article test method result : " + test );
 
 # 对使用模板进行测试操作
 def test(request) :
