@@ -111,8 +111,8 @@ NEVER_REDIS_TIMEOUT=365*24*60*60
 
 #####5. 对django 的自动处理
 - 研究django的框架的源代码：python\Lib\site-packages\django
-- 对django的框架的优化，使其支持service层级
-- 熟悉django的模板机制
+- 【done】对django的框架的优化，使其支持service层级
+- 【done】熟悉django的模板机制
 - 工具的集成处理
 
 ####六、 其他
