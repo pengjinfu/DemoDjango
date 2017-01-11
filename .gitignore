@@ -16,4 +16,7 @@ features/environment.py
 __pycache__
 
 # 过滤掉reports的日志
-/reports/*
+TESTS-*
+
+# 过滤掉IDE的配置文件
+.ide
