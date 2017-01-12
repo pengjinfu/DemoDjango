@@ -104,9 +104,10 @@ NEVER_REDIS_TIMEOUT=365*24*60*60
 #####4. 支持对django的单元测试/集成测试的工作
 - 【done】常用的单元测试框架：[unittest](https://docs.python.org/3/library/unittest.html),[pyunit](http://pyunit.sourceforge.net/pyunit_cn.html) , [behave](http://pythonhosted.org/behave/)
 - 【done】unittest框架使用demo 见 tests 目录 ， 运行：python -m unittest tests/test_something.py  或者 python -m unittest -v tests/test_something.py
-- 【done】behave框架使用： pip install -U behave  , 支持behave 来自动化测试开发的项目，详见目录 tutorial 和 features 
+- 【done】behave框架使用： pip install -U behave  , 支持behave 来自动化测试开发的项目，详见目录 tutorial 和 features ， 命令：behave features   --junit --junit-directory='/reports' -D ENV=TEST  --tags=-no 
 - 【暂时没研究】PyUnit的框架
-- 使用测试框架编写测试的demo,支持对django的service/model的测试
+- 【done】使用测试框架编写测试的demo,支持对django的service/model的测试， 命令：python -m unittest tests\services\ArticleServiceTest.py
+
 - 集成框架的支持：
 
 #####5. 对django 的自动处理
