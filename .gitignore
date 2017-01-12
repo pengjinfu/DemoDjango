@@ -1,3 +1,26 @@
 # 忽略缓存文件
 /__pycache__/*
 /demo_django/__pycache__/*
+
+# 忽略配置文件
+autogen_docs_config.json
+
+# 忽略features的配置文件
+features/steps/config.py
+features/environment.py
+
+# 过滤掉以.pyc结尾的文件
+*.pyc
+
+# 过滤掉__pycache__ 目录
+__pycache__
+
+# 过滤掉reports的日志
+TESTS-*
+
+# 过滤掉IDE的配置文件
+demo_django.iml
+misc.xml
+modules.xml
+workspace.xml
+profiles_settings.xml

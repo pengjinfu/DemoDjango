@@ -33,7 +33,7 @@ Demo_django是对python django 框架的实践。 django 是非常轻便的框�
 - 【done】对框架的模板操作，[查看](https://docs.djangoproject.com/en/1.10/topics/templates/)
 - 【done】页面的http的请求： Controller->model->Controller->View [Django 采用 urls配置的方式]
 - 【done】完成基本的数据的接口的交互[支持url的接口请求并相应的处理]
--  Python 的多线程的处理
+- 【done】Python 的多线程的处理，使用自带的线程库处理 [查看](http://www.runoob.com/python/python-multithreading.html)
 
 ###### 2） 包括命令行的使用（对内）
 - 【done】生成app/模块的命令：django-admin.py startproject YOUR_APP_NAME [查看](https://andrew-liu.gitbooks.io/django-blog/content/xiang_mu_yu_app.html)
@@ -102,14 +102,37 @@ NEVER_REDIS_TIMEOUT=365*24*60*60
 
 
 #####4. 支持对django的单元测试/集成测试的工作
-- 常用的单元测试框架：
+- 【done】常用的单元测试框架：[unittest](https://docs.python.org/3/library/unittest.html),[pyunit](http://pyunit.sourceforge.net/pyunit_cn.html) , [behave](http://pythonhosted.org/behave/)
+- 【done】unittest框架使用demo 见 tests 目录 ， 运行：python -m unittest tests/test_something.py  或者 python -m unittest -v tests/test_something.py
+- 【done】behave框架使用： pip install -U behave  , 支持behave 来自动化测试开发的项目，详见目录 tutorial 和 features 
+- 【暂时没研究】PyUnit的框架
 - 使用测试框架编写测试的demo,支持对django的service/model的测试
 - 集成框架的支持：
 
 #####5. 对django 的自动处理
 - 研究django的框架的源代码：python\Lib\site-packages\django
-- 对django的框架的优化，使其支持service层级
-- 熟悉django的模板机制
+- 【done】对django的框架的优化，使其支持service层级
+- 【done】熟悉django的模板机制
 - 工具的集成处理
 
 ####六、 其他
+
+####七、 常见问题
+###### 1. behave given 不支持中文，会报"UnicodeDecodeError: 'gbk' codec can't decode byte 0x80 in position 265: illegal multibyte sequence"
+> 解决方法：对behave\runner.py源码进行修改，[查看](https://github.com/behave/behave/issues/361)
+```
+## 改前：
+def exec_file(filename, globals={}, locals=None):
+    if locals is None:
+        locals = globals
+    locals['__file__'] = filename
+    with open(filename) as f:
+
+## 改后：
+def exec_file(filename, globals={}, locals=None):
+    if locals is None:
+        locals = globals
+    locals['__file__'] = filename
+    with open(filename, "rb") as f:
+
+```
