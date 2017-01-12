@@ -94,6 +94,12 @@ NEVER_REDIS_TIMEOUT=365*24*60*60
 
 #####2. 能够了解django中自动加载库和管理第三方库
 - 【done】python的第三方库的自动加载 ,[单个加载](http://www.jianshu.com/p/41a9c25273b1),[批量加载](http://lazybios.com/2015/06/how-to-use-requirementstxt-file-in-python/)
+```
+生成requirements.txt文件
+pip freeze > requirements.txt
+安装requirements.txt依赖
+pip install -r requirements.txt
+```
 - 一些常用的第三方库/组件库 ， [查看](http://dudu.zhihu.com/story/8083778)
 - 自建构建第三方库进行加载[这个暂时不需要]
 
@@ -128,7 +134,6 @@ def exec_file(filename, globals={}, locals=None):
         locals = globals
     locals['__file__'] = filename
     with open(filename) as f:
-
 ## 改后：
 def exec_file(filename, globals={}, locals=None):
     if locals is None:
