@@ -17,4 +17,4 @@ class ArticleServices() :
     def detail(self):
 
         test = Article.test('aaaabb')
-        return test;
+        return test

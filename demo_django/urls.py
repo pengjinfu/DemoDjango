@@ -19,6 +19,7 @@ from article import  views
 
 
 urlpatterns = [
+
     url(r'^admin/', admin.site.urls),
     # 查看view的home方法操作
     url(r'^$', views.home),  # 由于目前只有一个app, 方便起见, 就不设置include了
